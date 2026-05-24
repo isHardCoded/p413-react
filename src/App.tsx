@@ -32,7 +32,7 @@ function App() {
     <div className="flex items-center justify-center">
       <ClipLoader loading={loading} />
       
-      {users.length === 0 && !loading && (
+      {!loading && users.length === 0 && (
         <div className="text-center text-sm text-gray-500 mt-4">Not found users</div>
       )}
     </div>
