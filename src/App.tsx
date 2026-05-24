@@ -27,14 +27,14 @@ function App() {
   if (error) {
     return <div>Error: {error}</div>
   }
-
-  if (users.length === 0) {
-    return <div className="text-center text-sm text-gray-500 mt-4">Not found users</div>
-  }
   
   return <div className="flex flex-col m-4 gap-2">
     <div className="flex items-center justify-center">
       <ClipLoader loading={loading} />
+      
+      {users.length === 0 && !loading && (
+        <div className="text-center text-sm text-gray-500 mt-4">Not found users</div>
+      )}
     </div>
     {users.map((user) => (
       <div className="p-4 shadow-md hover:shadow-lg rounded-md transition-all hover:translate-y-1">
